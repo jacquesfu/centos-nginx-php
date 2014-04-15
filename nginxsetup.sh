@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# install required repos for nginx
+sudo rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+
 # install common binaries
 yum -y install php php-mysql php-cli php-common php-pdo php-odbc php-pecl-apc php-pecl-memcache php-fpm php-soap mysql mysql-server mysql-libs mysql-server nginx emacs man
 
