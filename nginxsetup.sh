@@ -27,20 +27,20 @@ server {
     #access_log  logs/host.access.log  main;
 
     location / {
-        root   /usr/share/nginx/html;
+        root   /usr/share/nginx/myapp;
         index  index.html index.htm;
     }
 
     error_page  404              /404.html;
     location = /404.html {
-        root   /usr/share/nginx/html;
+        root   /usr/share/nginx/myapp;
     }
 
     # redirect server error pages to the static page /50x.html
     #
     error_page   500 502 503 504  /50x.html;
     location = /50x.html {
-        root   /usr/share/nginx/html;
+        root   /usr/share/nginx/myapp;
     }
 
     # proxy the PHP scripts to Apache listening on 127.0.0.1:80
@@ -52,7 +52,7 @@ server {
     # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
     #
     location ~ \.php$ {
-        root           /usr/share/nginx/html;
+        root           /usr/share/nginx/myapp;
         fastcgi_pass   127.0.0.1:9000;
         fastcgi_index  index.php;
         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;

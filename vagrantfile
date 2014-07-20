@@ -9,8 +9,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network :forwarded_port, guest: 80, host: 8080
 
-  # config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.synced_folder "./", "/usr/share/nginx/myapp"
 
-  config.vm.provision "shell", inline: "curl -s https://raw.githubusercontent.com/jacquesfu/vagrant-centos-nginx-php/master/nginxsetup.sh | bash /dev/stdin arg1 arg2"
+  config.vm.provision "shell", inline: "cat /usr/share/nginx/myapp/nginxsetup.sh | bash /dev/stdin arg1 arg2"
 
 end
